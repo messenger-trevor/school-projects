@@ -8,6 +8,7 @@ import {map} from "rxjs/operators";
 
 
 
+// @ts-ignore
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,12 +28,17 @@ export class AppComponent implements OnInit{
   request!:ReserveRoomRequest;
   currentCheckInVal!:string;
   currentCheckOutVal!:string;
+  welcome: any = "";
 
     ngOnInit(){
       this.roomsearch= new FormGroup({
         checkin: new FormControl(' '),
         checkout: new FormControl(' ')
       });
+
+      this.getWelcome().subscribe(res => {
+        this.welcome=res;
+      })
 
  //     this.rooms=ROOMS;
 
@@ -83,6 +89,9 @@ export class AppComponent implements OnInit{
        return this.httpClient.get(this.baseURL + '/room/reservation/v1?checkin='+ this.currentCheckInVal + '&checkout='+this.currentCheckOutVal, {responseType: 'json'});
     }
 
+    getWelcome(): Observable<any> {
+      return this.httpClient.get(this.baseURL + '/api/welcome');
+    }
   }
 
 
