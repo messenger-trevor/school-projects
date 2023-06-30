@@ -31,8 +31,15 @@ C3.
     object explaining the event and rendering the eventTimes at lines 168-173.
 
 ## D
-D2. //future note here
+D2. Below is a screenshot correctly showing the application running in a container and being exposed on port:8080. 
 
-D3. //future note here 
+![img.png](img.png)
+
+D3. Going forward, this application will be deployed and run on an AWS ECS (elastic container service) cluster utilizing AWS Fargate. ECS handles running docker
+    containers without the needed overhead of managing servers and provides the necessary infrastructure should the application grow. To start, I will configure 
+    a task definition by supplying the docker image and allocating resources. Then configure the service and the Elastic Load Balancer and launch using Fargate.
+    All of this is easily configured through the AWS console, and is a cost-effective, fault-tolerant option that would easily scale going forward.
+    The application will be exposed through the Load Balancers DNS and will require a custom DNS name setup through an accredited registrar or for ease of use
+    you can utilize Amazon's Route 53 to register a domain name and use as a DNS service.
 
 
