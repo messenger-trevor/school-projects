@@ -1,6 +1,7 @@
 package edu.wgu.d387_sample_code;
 
 import edu.wgu.d387_sample_code.il8n.DisplayWelcome;
+import edu.wgu.d387_sample_code.il8n.TimeConversion;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

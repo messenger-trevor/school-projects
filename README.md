@@ -12,7 +12,7 @@ C1.
     A. Adds language_en_US.properties and language_fr_CA.properties to Resource Bundle in package /main/resources/ 
     B. Accomplishes multithreaded welcome message display by adding il8n package in edu.wgu.d387_sample_code directory. il8n currently contains 
     a DisplayWelcome java class that creates a resource bundle object from locale and stores a list object that WelcomeController exposes in a rest endpoint
-    at /api/welcome. The main java class (D387SampleCodeApplication) was then modified at lines 16-28 to include two runnable objects created by lamda functions
+    at /api/welcome. The main java class (D387SampleCodeApplication) was then modified at lines 16-28 to include two runnable objects created by lambda functions
     that are then passed to 2 threads that start at application startup. Finally, I installed node dependencies in the UI folder and modified app.component.ts
     at lines 31, 39-42, and 92-94 where I added a member variable to hold the get request, subscribed to the observable returned by getWelcome(), and defined 
     getWelcome() to perform the get request. I added a h1 tag with the welcome variable on line 28 of app.component.html.
@@ -24,8 +24,11 @@ C2. Added multiple currency to room reservation by adding code to app.component.
     Finally, lines 80-82 in app.component.html display the currencies on newlines and utilize an angular pipe to convert to their respective currencies.
 
 C3. 
-    A. //future note here 
-    B. //future note here
+    A. Added two java classes to the il8n package: TimeConversion which handles creating ZoneDateTime object based off the current time, time conversion, and string concatenation -- 
+    TimeConversionController that exposes the string on rest endpoint /api/times.
+    B. app.component.ts is further changed at lines 32, 42-44, and 105-107 where a variable to hold eventTimes was created, a method in the initialize method
+    which calls the getEvents method, and the getEvent method which performs the get request. Finally the app.component.html has a block of text, plus the eventTimes
+    object explaining the event and rendering the eventTimes at lines 168-173.
 
 ## D
 D2. //future note here
