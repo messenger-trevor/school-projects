@@ -55,7 +55,14 @@ export class AppComponent implements OnInit{
     onSubmit({value,valid}:{value:Roomsearch,valid:boolean}){
       this.getAll().subscribe(
 
-        rooms => {console.log(Object.values(rooms)[0]);this.rooms=<Room[]>Object.values(rooms)[0]; }
+        rooms => {console.log(Object.values(rooms)[0]);
+          this.rooms=<Room[]>Object.values(rooms)[0];
+          this.rooms.forEach(room => {
+            let price = parseInt(room.price)
+            room.priceCad = (price * 1.33).toString();
+            room.priceEur = (price * 0.92).toString();
+          })
+        }
 
 
       );
@@ -108,6 +115,8 @@ export interface Room{
   id:string;
   roomNumber:string;
   price:string;
+  priceCad:string;
+  priceEur:string;
   links:string;
 
 }
